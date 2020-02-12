@@ -9,7 +9,7 @@ class Warfare {
     //grabs canvas out of DOM
     let canvas = document.getElementById('pixwar')
 
-    //get drawing context, whhichh contains functs to draw to canvas
+    //get drawing context, whhich contains functs to draw to canvas
     let screen = canvas.getContext('2d')
 
     //get dims of canvas, used to place combatants
@@ -236,9 +236,12 @@ class Keyboarder {
 
 //this draws passed combatant as rectangle to 'screen'
 function drawRect (screen, combatant) {
+  screen.fillStyle = 'white';
   screen.fillRect(combatant.center.x -combatant.size.x / 2, 
     combatant.center.y - combatant.size.y /2, 
     combatant.size.x, combatant.size.y)
+
+ 
 }
 
 //collision returns true if 2 passed combatants collide
