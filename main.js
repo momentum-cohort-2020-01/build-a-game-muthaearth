@@ -37,7 +37,7 @@ class Warfare {
     this.draw(screen, stageArea)
 
     //queue up next call to tick with browser
-    requesgtAnimationFrame(tick)
+    requestAnimationFrame(tick)
     }
 
     //run 1st warfare tick; future calls will occur via tick() funct
@@ -75,7 +75,7 @@ for(let i = 0; i < this.combatants.length; i++) {
 
 foesBelow (foe) {
   //if filtered array is not empty, foes are below
-  return thhis.combatants.filter(function (c) {
+  return this.combatants.filter(function (c) {
 
     //keep 'c' if foe exists, is in same column as foe and
     //and 'foe' is somewhere below foe
@@ -86,7 +86,7 @@ foesBelow (foe) {
 
   //add combatant to array of combatants array
 addCombatant (combatant) {
-  this.combatant.push(combatant)
+  this.combatants.push(combatant)
 }
 }
 
@@ -117,7 +117,7 @@ class Foe {
 
   //if ammo is released and no compatriots below in this foe's column
   if (Math.random() > 0.995 && 
-  !this.warfare.foeBelow(this)) {
+  !this.warfare.foesBelow(this)) {
 
     //create ammo just below foe to move downward
     let ammo = new Ammo({x:this.center.x, y:this.center.y + this.size.y / 2},
@@ -184,7 +184,7 @@ class Player {
     this.warfare.shootSound.load()
 
     //play shooting sound
-    this.game.shootSound.play()
+    this.warfare.shootSound.play()
   }
   }
 }
