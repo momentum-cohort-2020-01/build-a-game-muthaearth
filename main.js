@@ -1,6 +1,3 @@
-//Main warfare object
-//let's take her for a spin
-
 //**new Warfare** creates game object w/game state and logic
 class Warfare {
   constructor() {
@@ -262,13 +259,14 @@ function drawRect(screen, combatant) {
 //4. Left of c1 is to R of R of c2
 //5. Top of c1 is below bottom of c2
 
+//if any of these conditions are true, return opposite of expression
 function collision(c1, c2) {
   return !(
     c1 === c2 ||
     c1.center.x + c1.size.x / 2 < c2.center.x - c2.size.x / 2 ||
     c1.center.y + c1.size.y / 2 < c2.center.y - c2.size.y / 2 ||
-    c1.center.x - c1.size.x / 2 > c2.center.x - c2.size.x / 2 ||
-    c1.center.y + c1.size.y / 2 > c2.center.y - c2.size.y / 2
+    c1.center.x - c1.size.x / 2 > c2.center.x + c2.size.x / 2 ||
+    c1.center.y - c1.size.y / 2 > c2.center.y + c2.size.y / 2
   );
 }
 
