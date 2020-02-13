@@ -172,6 +172,7 @@ class Player {
       //move left
       this.center.x -= 2;
     } else if (this.keyboarder.isDown(this.keyboarder.KEYS.RIGHT)) {
+      //move right
       this.center.x += 2;
     }
 
